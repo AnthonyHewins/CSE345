@@ -1,0 +1,4 @@
+<h1>Create a new event</h1>
+<% form_for :event do |f|%>
+<%= f.text_field :date, :value => @event.date.strftime("%d-%m-%Y") %>
+<%end%>
