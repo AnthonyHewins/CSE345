@@ -1,0 +1,41 @@
+<h1>Services</h1>
+<p>
+<%if session[:user].nil?%>
+You need to be logged in to post an event. <%=link_to("Log in", authenticate_login_path)%>
+<%else%>
+<%=link_to("Create new service/exchange", new_service_path)%>
+<%end%>
+</p>
+<table class="gridtable">
+<tr><th>Title</th><th>Posted on</th><th>Description</th><th>Price</th><th>Delete</th><th>Edit</th></tr>
+<%for i in @services%>
+<tr><td><%=i.title%></td><td><%=i.date%></td><td width="280px"><%=i.description%></td><td>$<%=i.price%></td>
+<td>
+<%x = i.student_id%>
+<%if x == session[:user]%>
+<%=button_to("Delete dis", services_delete_path(@service, :id => i.id))%>
+<%end%>
+</td>
+<td>
+<%if x == session[:user]%>
+<%=button_to("Edit", services_edit_path(@service, :id => i.id))%>
+<%end%>
+</td>
+</tr>
+<%end%>
+</table><br>
+<%=image_tag("cripwalk.gif", size:"160x160")%>
+<%=image_tag("cripwalk.gif", size:"160x160")%>
+<%=image_tag("rotatingthot.gif", size:"160x160")%>
+<%=image_tag("cripwalk.gif", size:"160x160")%>
+<%=image_tag("cripwalk.gif", size:"160x160")%>
+<%=image_tag("cripwalk.gif", size:"160x160")%>
+<%=image_tag("rotatingthot.gif", size:"160x160")%>
+<%=image_tag("shakeweight.gif", size:"160x160")%>
+<%=image_tag("rotatingthot.gif", size:"160x160")%>
+<%=image_tag("cripwalk.gif", size:"160x160")%>
+<%=image_tag("cripwalk.gif", size:"160x160")%>
+<%=image_tag("cripwalk.gif", size:"160x160")%>
+<%=image_tag("rotatingthot.gif", size:"160x160")%>
+<%=image_tag("cripwalk.gif", size:"160x160")%>
+<%=image_tag("cripwalk.gif", size:"160x160")%>

@@ -1,0 +1,6 @@
+<h1>Register</h1>
+<%= form_for @user, url: {action: "adddata"} do |f| %>
+<br>Student ID (that hasn't been registered yet)<br><%= f.text_field :student_id %>
+<br><br>Password<br><%= f.password_field :password%>
+<br><br><%= f.submit "Register" %>
+<% end %>

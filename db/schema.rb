@@ -10,14 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170201045711) do
+ActiveRecord::Schema.define(version: 20170207180004) do
+
+  create_table "admins", force: :cascade do |t|
+    t.string   "role"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "events", force: :cascade do |t|
-    t.string   "name"
-    t.date     "time"
+    t.integer  "admin_id"
+    t.boolean  "active"
+    t.string   "attendees"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.integer  "student_id"
+    t.string   "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer  "student_id"
+    t.boolean  "is_event"
     t.text     "description"
+    t.string   "title"
+    t.datetime "date"
+    t.string   "ref_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.integer  "student_id"
+    t.float    "price"
+    t.text     "description"
+    t.string   "title"
+    t.datetime "date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.boolean  "active"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.integer  "university_id"
+    t.string   "fname"
+    t.string   "lname"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "universities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

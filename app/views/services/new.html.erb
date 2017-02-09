@@ -1,5 +1,7 @@
-<%= form_for @event, url: {action: "create"} do |f| %>
+<h1>New service</h1>
+<%= form_for @service, url: {action: "create"} do |f| %>
   Title in 30 characters or less<br><%= f.text_field :title %>
   <br>Description in 250 characters or less (make sure to leave contact information!)<br><%= f.text_area :description, size: "60x3"%>
+  <br>Price<br><%= f.number_field :price %>
   <br><br><%= f.submit "Create" %>
 <% end %>

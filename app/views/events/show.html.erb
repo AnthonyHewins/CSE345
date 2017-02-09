@@ -1,2 +1,35 @@
-<h1>Edit an event</h1>
-events/show.html.erb<br>
+<h1>Events</h1>
+<p>
+<%if session[:user].nil?%>
+You need to be logged in to post an event. <%=link_to("Log in", authenticate_login_path)%>
+<%else%>
+<%=link_to("Create new event", new_event_path)%>
+<%end%>
+</p>
+<table class="gridtable">
+<tr><th>Title</th><th>Posted on</th><th>Description</th><th>Price</th><th>Delete</th></tr>
+<%for i in @events%>
+<tr><td><%=i.title%></td><td><%=i.date%></td><td width="300px"><%=i.description%></td><td>$<%=i.price%></td>
+<td>
+<%if i.student_id == session[:user]%>
+<%=button_to("Delete dis", events_delete_path(@event, :id => i.id))%>
+<%end%>
+</td></tr>
+<%end%>
+</table>
+
+<%=image_tag("thotty.gif", size:"160x160")%>
+<%=image_tag("thotty.gif", size:"160x160")%>
+<%=image_tag("rotatingthot.gif", size:"160x160")%>
+<%=image_tag("thotty.gif", size:"160x160")%>
+<%=image_tag("thotty.gif", size:"160x160")%>
+<%=image_tag("thotty.gif", size:"160x160")%>
+<%=image_tag("rotatingthot.gif", size:"160x160")%>
+<%=image_tag("shakeweight.gif", size:"160x160")%>
+<%=image_tag("rotatingthot.gif", size:"160x160")%>
+<%=image_tag("thotty.gif", size:"160x160")%>
+<%=image_tag("thotty.gif", size:"160x160")%>
+<%=image_tag("thotty.gif", size:"160x160")%>
+<%=image_tag("rotatingthot.gif", size:"160x160")%>
+<%=image_tag("thotty.gif", size:"160x160")%>
+<%=image_tag("thotty.gif", size:"160x160")%>

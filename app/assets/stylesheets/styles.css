@@ -35,6 +35,30 @@ footer, header, hgroup, menu, nav, section {display: block}
 			      Global styles
 ***************************************************/
 
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:white;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	color:black;
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #555555;
+	background-color: #f90;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: black;
+}
+
 html, body {
 	width:100%;
 	height:100%;
