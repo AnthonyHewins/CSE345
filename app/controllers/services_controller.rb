@@ -20,11 +20,12 @@ class ServicesController < ApplicationController
 
 	def update
 		x = params[:service]
-		a = Service.find_by(id: params[:id])
+		a = Service.find_by(id: params[:mod])
 		a[:title] = x[:title]
 		a[:description] = x[:description]
 		a[:price] = x[:price]
 		a.save
+		redirect_to services_view_path
 	end
 
 	def show
