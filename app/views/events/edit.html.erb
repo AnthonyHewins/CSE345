@@ -1,0 +1,6 @@
+<h1>Edit</h1>
+<%= form_for @a, url: events_update_path(:mod => @a[:id]) do |f| %>
+  Title in 30 characters or less<br><%= f.text_field :title, value: @a[:title]%>
+  <br>Description in 250 characters or less (make sure to leave contact information!)<br><%= f.text_area :description, value: @a[:description], size: "60x3"%>
+  <br><%= f.submit "Update" %>
+<% end %>

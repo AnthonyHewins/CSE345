@@ -11,7 +11,10 @@ Rails.application.routes.draw do
 	get 'events/view' => 'events#show'
 	get 'events/edit' => 'events#edit'
 	get 'events/new' => 'events#new'
-	get 'events/edit' => 'events#edit'
+	post 'events/edit' => 'events#edit'
+	post 'events/delete' => 'events#delete'
+	post 'events/update' => 'events#update'
+	post 'events/attend' => 'events#attend'
 
 	get 'services/view' => 'services#show'
 	get 'services/edit' => 'services#edit'

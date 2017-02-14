@@ -7,14 +7,34 @@ You need to be logged in to post an event. <%=link_to("Log in", authenticate_log
 <%end%>
 </p>
 <table class="gridtable">
-<tr><th>Title</th><th>Posted on</th><th>Description</th><th>Price</th><th>Delete</th></tr>
+<tr><th>Title</th><th>Posted on</th><th>Description</th><th>Attend</th><th>Attendees</th><th>Delete</th><th>Edit</th></tr>
 <%for i in @events%>
-<tr><td><%=i.title%></td><td><%=i.date%></td><td width="300px"><%=i.description%></td><td>$<%=i.price%></td>
+<tr><td><%=i.title%></td><td><%=i.date%></td><td width="300px"><%=i.description%></td>
 <td>
-<%if i.student_id == session[:user]%>
+<%if !session[:user].nil?%>
+	<%if i.attendees.include? session[:user].to_s%>
+		<%=button_to("Not going", events_attend_path(@student, :id => session[:user], :going => false))%>
+	<%else%>
+		<%=button_to("Going", events_attend_path(@student, :id => session[:user], :going => true))%>
+	<%end%>
+<%else%>
+	You must login.
+<%end%>
+</td>
+<td>
+Code <!--Who's going: button or list? IDK-->
+</td>
+<td>
+<%if i.admin_id == session[:user]%>
 <%=button_to("Delete dis", events_delete_path(@event, :id => i.id))%>
 <%end%>
-</td></tr>
+</td>
+<td>
+<%if i.admin_id == session[:user]%>
+<%=button_to("Edit", events_edit_path(@event, :id => i.id))%>
+<%end%>
+</td>
+</tr>
 <%end%>
 </table>
 
