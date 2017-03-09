@@ -24,6 +24,7 @@ class EventsController < ApplicationController
 		a = Event.find_by(id: params[:mod])
 		a[:title] = x[:title]
 		a[:description] = x[:description]
+		a[:date] = Time.now
 		a.save
 		redirect_to events_view_path
 	end
