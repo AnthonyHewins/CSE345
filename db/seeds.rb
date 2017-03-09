@@ -33,7 +33,7 @@ Service.create(student_id: 1, price: 560.10, title: "SELLING SOUL", description:
 Service.create(student_id: 3, price: 50060.10, title: "Selling CSGO skins", description: "Easily the most expensive. Cell: 911", date: Time.now)
 Service.create(student_id: 5, price: 56690.10, title: "Selling noose", description: "I'm sure you can find a use. Cell: 911", date: Time.now)
 
-Event.create(id: 1,active: true,attendees: "x1x2x3",title: "ALEX JONES WORSHIP",description: "Our lord and savior, Alex Jones, we are about to worship.", date: Time.now)
-Event.create(id: 2,active: true,attendees: "x2x4",title: "Thot patrollin",description: "We out here looking for thots.")
-Event.create(id: 4,active: true,attendees: "x2x4",title: "Meme Exchange",description: "I have the hottest memes from 2016, come view them and trade")
-Event.create(id: 4,active: false,attendees: "x2",title: "Grapefruit party ;)",description: "Grapefruit is a fat burner")
+Event.create(admin_id: 1,active: true,attendees: "x1x2x3",title: "ALEX JONES WORSHIP",description: "Our lord and savior, Alex Jones, we are about to worship.", date: Time.now)
+Event.create(admin_id: 2,active: true,attendees: "x2x4",title: "Thot patrollin",description: "We out here looking for thots.")
+Event.create(admin_id: 4,active: true,attendees: "x2x4",title: "Meme Exchange",description: "I have the hottest memes from 2016, come view them and trade")
+Event.create(admin_id: 4,active: false,attendees: "x2",title: "Grapefruit party ;)",description: "Grapefruit is a fat burner")
