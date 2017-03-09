@@ -11,7 +11,7 @@ class EventsController < ApplicationController
 		temp.title = event[:title][0..30]
 		temp.admin_id = session[:user]
 		temp.active = true
-		temp.attendees = "xx"
+		temp.attendees = "x"
 		temp.save
 		redirect_to events_view_path
 	end
@@ -50,6 +50,14 @@ class EventsController < ApplicationController
 	end
 
 	def attend
-		
+		x = Event.find_by(id: params[:event])
+		print(params[:going] + "\n")
+		if params[:going].to_i == 1
+			x.attendees += params[:id].to_s + "x"
+		else
+			x.attendees = x.attendees.gsub!("x" + params[:id], "")
+		end
+		x.save
+		redirect_to events_view_path
 	end
 end

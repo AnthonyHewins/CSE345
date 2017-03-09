@@ -11,7 +11,7 @@ class AuthenticateController < ApplicationController
 		y = x[:student_id].to_i
 		z = x[:password]
 		if !Member.find_by(student_id: y).nil? || Student.find_by(id: y).nil?
-			redirect_to authenticate_register_path
+			redirect_to authenticate_login_path
 		else
 			Member.create(student_id: y, password: z)
 			redirect_to authenticate_login_path
