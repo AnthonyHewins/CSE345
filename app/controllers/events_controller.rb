@@ -1,4 +1,35 @@
 class EventsController < ApplicationController
+
+	def list
+		@event = Event.find_by(id: params[:id])
+		s = @event.attendees
+		temp = ""
+		n = s.length
+		a = []
+		s.split("").each do |i|
+			if !(i.eql? "x")
+				temp << i
+				n -= 1
+			else
+				if n == 0
+					break
+				else
+					cachd = temp.to_i
+					if cachd != 0
+						a << cachd
+					end
+					n -= 1
+					temp = ""
+				end	
+			end
+		end
+
+		@list = []
+		for i in a
+			@list << Student.find_by(id: i)
+		end
+	end
+
 	def new
 		@event = Event.new
 	end
@@ -61,4 +92,5 @@ class EventsController < ApplicationController
 		x.save
 		redirect_to events_view_path
 	end
+
 end

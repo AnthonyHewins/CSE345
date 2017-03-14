@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 	get 'authenticate/register' => 'authenticate#register'
 	post 'authenticate/adddata' => 'authenticate#adddata'
 
+	post 'events/list' => 'events#list'
 	get 'events/view' => 'events#show'
 	get 'events/edit' => 'events#edit'
 	get 'events/new' => 'events#new'
