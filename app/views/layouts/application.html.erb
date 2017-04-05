@@ -18,14 +18,13 @@
     <ul>
 	<li><%=link_to "Events", events_view_path%></li>
          <li><%=link_to "Services", services_view_path%></li>
-<li>
 <%if session[:user].nil?%>
-<%=link_to "Log in", authenticate_login_path%>
+<li><%=link_to "Log in", authenticate_login_path%></li>
+<li><%=image_tag("flocka.jpg", size:"110x110")%></li>
 <%else%>
-<%=link_to "Log out", authenticate_logout_path%>
+<li><%=link_to "Log out", authenticate_logout_path%></li>
+<li><%=link_to "Inbox", messages_view_path%></li>
 <%end%>
-<li>
-	<li><%=image_tag("flocka.jpg", size:"110x110")%></li>
     </ul>
 </nav>
 <!--end menu-->
@@ -42,63 +41,11 @@
           <%= yield %>
    </div>
    <!--end intro-->
-
-
    
    <!--start holder-->
-
-   <div class="holder_content">
-   
-   <section class="group1">
-   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<div id="container"><%=image_tag("youathot.jpg", size:"300x300")%><%=image_tag("slap.gif", size:"400x400")%></div>
-    <a href=""><span class="read_more">Read more about thot patrol...</span></a>
-
-	</section>
-
-  
-   </div>
-   <!--end holder-->
-   
-   <!--start holder-->
-
-   <div class="holder_content1">
-    <section class="group4">
-   <h3>Gallery</h3>
-   	<p>What did you just say about me, you little bib? I’ll have you know I graduated top of my class in the Navy Seals, and I’ve been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in harambe warfare and I’m the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fubb out with precision the likes of which has never been seen before on this Earth, mark my fubbin words. You think you can get away with saying that shib to me over the Internet? Think again, fubb. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. You’re fubbin dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and that’s just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable abb off the face of the continent, you little shib. If only you could have known what unholy retribution your little “clever” comment was about to bring down upon you, maybe you would have held your fubbin tongue. But you couldn’t, you didn’t, and now you’re paying the price, you idiot. I will shib fury all over you and you will drown in it. You’re dead, kiddo.</p>
-    <div class="pikachoose">
-	<ul id="pikame" >
-		<li><a href="#"><%=image_tag("mario.jpeg")%></li>
-		<li><a href="#"><%=image_tag("js.jpeg")%></li>
-		<li><a href="#"><%=image_tag("lightning.jpeg")%></li>
-		<li><a href="#"><%=image_tag("begone.jpg")%></li>
-	   </ul>
-       </div>
-	</section>
-
-
-       
-   <section class="group5">
-   <h3>Testimonials</h3>
-   	<p><span class="purple">1)</span><%=image_tag("china.jpeg")%></p>
-      	<p><span class="purple">2)</span><%=image_tag("wazowski.jpeg")%></p>
-   	<p><span class="purple">3)</span><%=image_tag("x.jpg")%></p>
-
-
-	</section>
-
    
     </div>
     <!--end holder-->
-
-   
-   
     </div>
-   <!--end container-->
-   
-   <!--start footer-->
-   <footer>
-   <div class="container"><strong>Thot terminators inc., HP inc., and Gemini Games LLC joint effort</strong></div>  
-   </footer>
   </body>
 </html>

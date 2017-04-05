@@ -1,0 +1,19 @@
+<h1>Inbox</h1>
+<%if @message.length != 0%>
+<table class="gridtable">
+<tr><th>From</th><th>Post</th><th>Message</th><th>Reply</th><th>Delete</th></tr>
+<%for i in @message%>
+<% y = Student.find_by(id: i.sender) %>
+<% z = Service.find_by(id: i.post_id) %>
+<tr>
+<td><%=y.fname%> <%=y.lname%></td>
+<td><%=z.title%></td>
+<td><%=i.message%></td>
+<td><%=button_to("Reply", messages_new_path(:post_id => i.post_id, :sender => i.receiver, :receiver => i.sender))%></td>
+<td><%=button_to("Delete", messages_delete_path(:id => i.id))%></td>
+</tr>
+<%end%>
+<%else%>
+<h2>No messages.</h2>
+<%end%>
+</table>

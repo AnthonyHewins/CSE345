@@ -20,9 +20,18 @@ Rails.application.routes.draw do
 	get 'services/view' => 'services#show'
 	get 'services/edit' => 'services#edit'
 	get 'services/new' => 'services#new'
+	post 'services/display' => 'services#display'
 	post 'services/edit' => 'services#edit'
 	post 'services/delete' => 'services#delete'
 	post 'services/modify' => 'services#modify'
+
+	get 'messages/view' => 'messages#show'
+	get 'messages/edit' => 'messages#edit'
+	post 'messages/new' => 'messages#new'
+	post 'messages/create' => 'messages#create'
+	post 'messages/edit' => 'messages#edit'
+	post 'messages/delete' => 'messages#delete'
+	post 'messages/modify' => 'messages#modify'
 
 	get 'home/index' => 'home#index'
 	root 'home#index'
