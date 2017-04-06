@@ -3,8 +3,8 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   movy = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movy.first)
 
 University.create(name: "Brazzers University")
 University.create(name: "Hogwarts")
@@ -18,15 +18,15 @@ Student.create(university_id: 3, fname: "Nutt", lname: "City")
 Student.create(university_id: 3, fname: "NP", lname: "Hard")
 Student.create(university_id: 3, fname: "Hoopty", lname: "Doopty")
 
-Categories.create(title: "Electronics")
-Categories.create(title: "Medical")
-Categories.create(title: "Art")
-Categories.create(title: "Academia")
-Categories.create(title: "Tickets")
-Categories.create(title: "Clothing")
-Categories.create(title: "Missed connections")
-Categories.create(title: "Women seeking men")
-Categories.create(title: "Misc")
+Category.create(title: "Electronics")
+Category.create(title: "Medical")
+Category.create(title: "Art")
+Category.create(title: "Academia")
+Category.create(title: "Tickets")
+Category.create(title: "Clothing")
+Category.create(title: "Missed connections")
+Category.create(title: "Women seeking men")
+Category.create(title: "Misc")
 
 Member.create(student_id: 1, password: "succ")
 Member.create(student_id: 2, password: "succ")
